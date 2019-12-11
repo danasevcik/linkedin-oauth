@@ -49,12 +49,16 @@ class App extends Component {
     console.log(token);
     fetch(`https://api.linkedin.com/v2/me?oauth2_access_token=${token.access_token}`)
     .then(res => res.json())
-    .then(res => this.setState({
-      firstName: res.localizedFirstName,
-      lastName: res.localizedLastName,
-      id: res.id,
-      pic: res.profilePicture.displayImage
-    }))
+    .then(res => {
+      if (res.profilePicture) {
+        this.setState({
+          firstName: res.localizedFirstName,
+          lastName: res.localizedLastName,
+          id: res.id,
+          pic: res.profilePicture.displayImage
+        })
+
+      }})
     this.setState({accessToken: token.access_token})
   }
 
