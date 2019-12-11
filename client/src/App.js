@@ -66,7 +66,12 @@ class App extends Component {
     console.log('state',this.state);
     return (
       <div className="App">
-        <a target='blank' href='https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77i0orwyc6pvp2&redirect_uri=http://localhost:3000/&state=xyz&scope=r_liteprofile,r_emailaddress'>click me for linkedin</a>
+        <a target='blank' href='https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77i0orwyc6pvp2&redirect_uri=http://localhost:3000/&state=xyz&scope=r_liteprofile,r_emailaddress'>
+          <button className="ui linkedin button">
+            <i aria-hidden="true" className="linkedin icon"></i>
+            LinkedIn
+          </button>
+        </a>
         {this.state.accessToken &&
           <div>
             <input value={this.state.email} onChange={this.handleChange}></input>
