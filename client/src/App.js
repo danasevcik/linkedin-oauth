@@ -66,7 +66,7 @@ class App extends Component {
         {this.state.accessToken &&
           <div>
             <input value={this.state.email} onChange={this.handleChange}></input>
-            <button onClick={this.handleEmail}>submit</button>
+            <button className='ui button' onClick={this.handleEmail}>submit</button>
             <a target="_blank" href={`https://www.linkedin.com/sales/gmail/profile/proxy/${this.state.email}`}>go!</a>
           </div>
         }
