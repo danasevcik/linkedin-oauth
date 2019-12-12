@@ -5,6 +5,7 @@ import { Input, Menu } from 'semantic-ui-react'
 import Home from './Home.js'
 import About from './About.js'
 import Login from './Login.js'
+import NavBar from './NavBar.js'
 
 class App extends Component {
 
@@ -13,7 +14,8 @@ class App extends Component {
     firstName: null,
     lastName: null,
     id: null,
-    pic: null
+    pic: null,
+    activeItem: 'home'
   }
 
   componentDidMount() {
@@ -56,25 +58,18 @@ class App extends Component {
     this.setState({accessToken: token.access_token})
   }
 
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
   render() {
     console.log('state',this.state);
+    const { activeItem } = this.state
     return (
       <div className="App">
-        <div id='nav-bar'>
-          <Link to='/home'>
-            Home
-          </Link>
-          <Link to='/about'>
-            About
-          </Link>
-          <Link to='/login-with-linkedin'>
-            Login With LinkedIn
-          </Link>
-
-        </div>
+        <NavBar />
+        
         <Switch>
           <Route
-            path='/home'
+            path='/'
             component={Home}
             />
           <Route
