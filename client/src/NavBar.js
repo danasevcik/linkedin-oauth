@@ -1,52 +1,35 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Input, Menu } from 'semantic-ui-react'
-import Home from './Home.js'
-import About from './About.js'
-import Login from './Login.js'
+import { Link } from "react-router-dom";
 
 class NavBar extends Component {
 
   state = {
-    activeItem: 'home'
+    email: ''
   }
 
-  handleItemClick = (e, { name }) => {
-    this.setState({activeItem: name})
+  handleChange = (e) => {
+    this.setState({email: e.target.value});
   }
 
   render() {
-    const { activeItem } = this.state
-    console.log('renderede');
-    let component = this.state.activeItem[0].toUpperCase() + this.state.activeItem.slice(1);
-    console.log(component);
     return (
       <div>
-        <Menu secondary>
-          <Menu.Item
-            name='home'
-            active={activeItem === 'home'}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name='about'
-            active={activeItem === 'about'}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name='login with linkedin'
-            active={activeItem === 'login with linkedin'}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Menu position='right'>
-            <Menu.Item>
-              <Input icon='search' placeholder='Search...' />
-            </Menu.Item>
-          </Menu.Menu>
-        </Menu>
-        {component === 'Home' && <Home />}
-        {component === 'About' && <About />}
-        {component === 'Login with linkedin' && <Login />}
+        <Link to='/'>
+          Home
+        </Link>
+        <Link to='/about'>
+          About
+        </Link>
+        <Link to='/login-with-linkedin'>
+          Login With Linkedin
+        </Link>
+        <div>
+          <input value={this.state.email} onChange={this.handleChange}></input>
+          <a target="_blank" rel="noopener noreferrer" href={`https://www.linkedin.com/sales/gmail/profile/viewByEmail/${this.state.email}`}>
+            <button className='ui button'>submit</button>
+          </a>
+        </div>
       </div>
     )
   }
