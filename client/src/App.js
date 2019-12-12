@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch, withRouter, Link } from "react-router-dom";
-// Login with LinkedIn - the screen should show the icon, when clicked it should show a small pop up requesting permission from current user to share his\her basic profile details, once approved, it should display profile lite details. Info on Profile lite can be found here - https://docs.microsoft.com/en-us/linkedin/shared/references/v2/profile/lite-profile
-// Find linked in page using email - another alternative is to find LinkedIn profile page using email (not via the API), can you think of a way to do so and show that in the app?
+import { Input, Menu } from 'semantic-ui-react'
+import Home from './Home.js'
+import About from './About.js'
+import Login from './Login.js'
+
 class App extends Component {
 
   state = {
@@ -57,6 +60,33 @@ class App extends Component {
     console.log('state',this.state);
     return (
       <div className="App">
+        <div id='nav-bar'>
+          <Link to='/home'>
+            Home
+          </Link>
+          <Link to='/about'>
+            About
+          </Link>
+          <Link to='/login-with-linkedin'>
+            Login With LinkedIn
+          </Link>
+
+        </div>
+        <Switch>
+          <Route
+            path='/home'
+            component={Home}
+            />
+          <Route
+            path='/about'
+            component={About}
+            />
+          <Route
+            path='/login-with-linkedin'
+            component={Login}
+            />
+      </Switch>
+
         <a target='blank' href='https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77i0orwyc6pvp2&redirect_uri=http://localhost:3000/&state=xyz&scope=r_liteprofile,r_emailaddress'>
           <button className="ui linkedin button">
             <i aria-hidden="true" className="linkedin icon"></i>
@@ -96,4 +126,4 @@ class App extends Component {
 }
 
 
-export default App;
+export default withRouter(App);

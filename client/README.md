@@ -1,3 +1,10 @@
+
+Login with LinkedIn - the screen should show the icon, when clicked it should show a small pop up requesting permission from current user to share his\her basic profile details, once approved, it should display profile lite details. Info on Profile lite can be found here - https://docs.microsoft.com/en-us/linkedin/shared/references/v2/profile/lite-profile
+
+Find linked in page using email - another alternative is to find LinkedIn profile page using email (not via the API), can you think of a way to do so and show that in the app?
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
