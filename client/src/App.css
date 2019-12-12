@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  font-family: 'Gupter', serif;
+}
+
+body, h1, h2, h3 {
+  font-family: 'Gupter', serif;
 }
 
 .App-logo {
@@ -54,4 +59,9 @@
   margin-right: 1vw;
   border-radius: 5px;
   box-shadow: 5px 2px 2px lightgrey;
+}
+
+#welcome-photo {
+  height: 50vh;
+  width: 50vh;
 }

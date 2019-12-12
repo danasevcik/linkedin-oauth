@@ -34,7 +34,7 @@ class NavBar extends Component {
         <div className='nav-link' id='right'>
           <Input value={this.state.email} onChange={this.handleChange} placeholder='Find Someone via Email'></Input>
           <a target="_blank" rel="noopener noreferrer" href={`https://www.linkedin.com/sales/gmail/profile/viewByEmail/${this.state.email}`}>
-            <button className='ui button'>submit</button>
+            <button className='ui button'>Search Email</button>
           </a>
         </div>
       </div>

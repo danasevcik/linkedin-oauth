@@ -52,28 +52,24 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <a target='blank' href='https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77i0orwyc6pvp2&redirect_uri=http://localhost:3000/login-with-linkedin&state=xyz&scope=r_liteprofile,r_emailaddress'>
-          <button className="ui linkedin button">
-            <i aria-hidden="true" className="linkedin icon"></i>
-            LinkedIn
-          </button>
-        </a>
         {this.state.firstName ?
-            <h1>You are now sharing the following info with Dana-test-app</h1>
+            <div>
+              <h1>You are now sharing the following info with Dana-test-app</h1>
+              <p>First Name: {this.state.firstName}</p>
+              <p>Last Name: {this.state.lastName}</p>
+              <p>LinkedIn ID: {this.state.id}</p>
+              <p>Photo Info: {this.state.pic}</p>
+            </div>
           :
-            <h1>Currently not sharing data with Dana-test-app</h1>
-        }
-        {this.state.firstName &&
-          <p>First Name: {this.state.firstName}</p>
-        }
-        {this.state.lastName &&
-          <p>Last Name: {this.state.lastName}</p>
-        }
-        {this.state.id &&
-          <p>LinkedIn ID: {this.state.id}</p>
-        }
-        {this.state.pic &&
-          <p>Photo Info: {this.state.pic}</p>
+            <div>
+              <h1>Currently not sharing data with Dana's Test App</h1>
+              <a target='blank' href='https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77i0orwyc6pvp2&redirect_uri=http://localhost:3000/login-with-linkedin&state=xyz&scope=r_liteprofile,r_emailaddress'>
+              <button className="ui linkedin button">
+              <i aria-hidden="true" className="linkedin icon"></i>
+              LinkedIn
+              </button>
+              </a>
+            </div>
         }
       </div>
     )

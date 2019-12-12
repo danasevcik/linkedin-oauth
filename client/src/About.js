@@ -6,8 +6,8 @@ class About extends Component {
     console.log('renderede');
     return (
       <div>
-        <h1>About</h1>
-        <p>This app </p>
+        <h1>About Dana's Test App</h1>
+        <p></p>
       </div>
     )
   }
