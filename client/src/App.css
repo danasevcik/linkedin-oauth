@@ -37,18 +37,21 @@
   }
 }
 
-.popup-overlay {
-visibility:hidden;
+#nav-bar {
+  width: 100vw;
+  display: flex;
 }
 
-.popup-content {
-visibility:hidden;
+.nav-link {
+  padding: 2vw;
 }
 
-.popup-overlay.active{
-visibility:visible;
+#right {
+  margin-left: auto;
 }
 
-.popup-content.active {
-visibility:visible;
+#search-bar {
+  margin-right: 1vw;
+  border-radius: 5px;
+  box-shadow: 5px 2px 2px lightgrey;
 }

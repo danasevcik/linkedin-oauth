@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Link } from "react-router-dom";
+import { Input } from 'semantic-ui-react'
 
 class NavBar extends Component {
 
@@ -14,18 +15,24 @@ class NavBar extends Component {
 
   render() {
     return (
-      <div>
-        <Link to='/'>
-          Home
-        </Link>
-        <Link to='/about'>
-          About
-        </Link>
-        <Link to='/login-with-linkedin'>
-          Login With Linkedin
-        </Link>
-        <div>
-          <input value={this.state.email} onChange={this.handleChange}></input>
+      <div id='nav-bar'>
+        <div className='nav-link'>
+          <Link to='/'>
+            Home
+          </Link>
+        </div>
+        <div className='nav-link'>
+          <Link to='/about'>
+            About
+          </Link>
+        </div>
+        <div className='nav-link'>
+          <Link to='/login-with-linkedin'>
+            Login With Linkedin
+          </Link>
+        </div>
+        <div className='nav-link' id='right'>
+          <Input value={this.state.email} onChange={this.handleChange} placeholder='Find Someone via Email'></Input>
           <a target="_blank" rel="noopener noreferrer" href={`https://www.linkedin.com/sales/gmail/profile/viewByEmail/${this.state.email}`}>
             <button className='ui button'>submit</button>
           </a>
