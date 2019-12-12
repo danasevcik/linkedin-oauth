@@ -7,7 +7,7 @@ class About extends Component {
     return (
       <div>
         <h1>About Dana's Test App</h1>
-        <p></p>
+        <p>This application grant's access to user information via LinkedIn OAuth 2.0.</p>
       </div>
     )
   }
