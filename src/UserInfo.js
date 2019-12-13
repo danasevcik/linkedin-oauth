@@ -6,12 +6,17 @@ import ModalForm from './modals/ModalForm.js'
 import { CSVLink } from "react-csv"
 
 class UserInfo extends Component {
+
   state = {
      items: []
    }
 
+   componentDidMount(){
+     this.getItems()
+   }
+
    getItems(){
-     fetch('http://localhost:3000/crud')
+     fetch('http://localhost:3000/getAllUsers')
        .then(response => response.json())
        .then(items => this.setState({items}))
        .catch(err => console.log(err))
@@ -26,11 +31,8 @@ class UserInfo extends Component {
    updateState = (item) => {
      const itemIndex = this.state.items.findIndex(data => data.id === item.id)
      const newArray = [
-     // destructure all items from beginning to the indexed item
        ...this.state.items.slice(0, itemIndex),
-     // add the updated item to the array
        item,
-     // add the rest of the items to the array from the index after the replaced item
        ...this.state.items.slice(itemIndex + 1)
      ]
      this.setState({ items: newArray })
@@ -41,34 +43,30 @@ class UserInfo extends Component {
      this.setState({ items: updatedItems })
    }
 
-   componentDidMount(){
-     this.getItems()
-   }
-
    render() {
      return (
        <Container className="App">
          <Row>
            <Col>
-             <h1 style={{margin: "20px 0"}}>CRUD Database</h1>
+             <h1>Dana's Test App Users</h1>
+           </Col>
+         </Row>
+         <Row>
+           <Col>
+             <ModalForm buttonLabel="Add Item" addItemToState={this.addItemToState}/>
+             <CSVLink
+             filename={"db.csv"}
+             color="primary"
+             className="ui button"
+             style={{marginTop: '2px'}}
+             data={this.state.items}>
+             Download CSV
+             </CSVLink>
            </Col>
          </Row>
          <Row>
            <Col>
              <DataTable items={this.state.items} updateState={this.updateState} deleteItemFromState={this.deleteItemFromState} />
-           </Col>
-         </Row>
-         <Row>
-           <Col>
-             <CSVLink
-               filename={"db.csv"}
-               color="primary"
-               style={{float: "left", marginRight: "10px"}}
-               className="btn btn-primary"
-               data={this.state.items}>
-               Download CSV
-             </CSVLink>
-             <ModalForm buttonLabel="Add Item" addItemToState={this.addItemToState}/>
            </Col>
          </Row>
        </Container>

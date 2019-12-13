@@ -3,11 +3,9 @@ import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap'
 import AddEditForm from '../forms/AddEditForm.js'
 
 class ModalForm extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      modal: false
-    }
+
+  state = {
+    modal: false
   }
 
   toggle = () => {
@@ -17,31 +15,32 @@ class ModalForm extends Component {
   }
 
   render() {
-      const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>
+    const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>
+    const label = this.props.buttonLabel
 
-      const label = this.props.buttonLabel
+    let button = ''
+    let title = ''
 
-      let button = ''
-      let title = ''
+    if(label === 'Edit') {
+      button = <Button
+                color="warning"
+                onClick={this.toggle}
+                className='ui button'
+                >{label}
+              </Button>
+      title = 'Edit Item'
+    } else {
+      button = <Button
+                color="success"
+                onClick={this.toggle}
+                className='ui button'
+                >{label}
+              </Button>
+      title = 'Add New Item'
+    }
 
-      if(label === 'Edit'){
-        button = <Button
-                  color="warning"
-                  onClick={this.toggle}
-                  style={{float: "left", marginRight:"10px"}}>{label}
-                </Button>
-        title = 'Edit Item'
-      } else {
-        button = <Button
-                  color="success"
-                  onClick={this.toggle}
-                  style={{float: "left", marginRight:"10px"}}>{label}
-                </Button>
-        title = 'Add New Item'
-      }
 
-
-      return (
+    return (
       <div>
         {button}
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>

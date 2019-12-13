@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
 
 class AddEditForm extends React.Component {
   state = {
@@ -7,9 +7,6 @@ class AddEditForm extends React.Component {
     first: '',
     last: '',
     email: '',
-    phone: '',
-    location: '',
-    hobby: ''
   }
 
   onChange = e => {
@@ -18,7 +15,7 @@ class AddEditForm extends React.Component {
 
   submitFormAdd = e => {
     e.preventDefault()
-    fetch('http://localhost:3000/crud', {
+    fetch('http://localhost:3000/createNewUser', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -43,7 +40,7 @@ class AddEditForm extends React.Component {
 
   submitFormEdit = e => {
     e.preventDefault()
-    fetch('http://localhost:3000/crud', {
+    fetch('http://localhost:3000/editUser', {
       method: 'put',
       headers: {
         'Content-Type': 'application/json'
@@ -58,7 +55,6 @@ class AddEditForm extends React.Component {
       .then(response => response.json())
       .then(item => {
         if(Array.isArray(item)) {
-          // console.log(item[0])
           this.props.updateState(item[0])
           this.props.toggle()
         } else {
@@ -71,8 +67,8 @@ class AddEditForm extends React.Component {
   componentDidMount(){
     // if item exists, populate the state with proper data
     if(this.props.item){
-      const { id, first, last, email, phone, location, hobby } = this.props.item
-      this.setState({ id, first, last, email, phone, location, hobby })
+      const { id, first, last, email } = this.props.item
+      this.setState({ id, first, last, email })
     }
   }
 
@@ -92,7 +88,7 @@ class AddEditForm extends React.Component {
           <Input type="email" name="email" id="email" onChange={this.onChange} value={this.state.email === null ? '' : this.state.email}  />
         </FormGroup>
 
-        <Button>Submit</Button>
+        <button className='ui button'>Submit</button>
       </Form>
     );
   }

@@ -6,6 +6,7 @@ class DataTable extends Component {
 
   deleteItem = id => {
     let confirmDelete = window.confirm('Delete item forever?')
+    console.log(confirmDelete);
     if(confirmDelete){
       fetch('http://localhost:3000/crud', {
       method: 'delete',
@@ -25,24 +26,25 @@ class DataTable extends Component {
 
   }
 
+  findOnLinkedIn = (id) => {
+
+  }
+
   render() {
 
     const items = this.props.items.map(item => {
       return (
         <tr key={item.id}>
-          <th scope="row">{item.id}</th>
           <td>{item.first}</td>
           <td>{item.last}</td>
           <td>{item.email}</td>
-          <td>{item.phone}</td>
-          <td>{item.location}</td>
-          <td>{item.hobby}</td>
-          <td>
-            <div style={{width:"110px"}}>
+          <td style={{display: 'flex'}}>
+
               <ModalForm buttonLabel="Edit" item={item} updateState={this.props.updateState}/>
               {' '}
-              <Button color="danger" onClick={() => this.deleteItem(item.id)}>Del</Button>
-            </div>
+              <button color="danger" className='ui button' onClick={() => this.deleteItem(item.id)}>Delete</button>
+              <button color="danger" className='ui button' onClick={() => this.findOnLinkedIn(item.id)}>Find On LinkedIn</button>
+
           </td>
         </tr>
         )
@@ -52,14 +54,13 @@ class DataTable extends Component {
       <Table responsive hover>
         <thead>
           <tr>
-            <th>ID</th>
             <th>First</th>
             <th>Last</th>
             <th>Email</th>
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style={{alignSelf: 'center'}}>
           {items}
         </tbody>
       </Table>
