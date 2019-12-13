@@ -5,6 +5,8 @@ import Home from './Home.js'
 import About from './About.js'
 import Login from './Login.js'
 import NavBar from './NavBar.js'
+import UserInfo from './UserInfo.js'
+import { CSVLink } from "react-csv"
 
 class App extends Component {
 
@@ -24,6 +26,10 @@ class App extends Component {
           <Route
             path='/login-with-linkedin'
             component={Login}
+            />
+          <Route
+            path='/user-info'
+            component={UserInfo}
             />
           <Route
             path='/'

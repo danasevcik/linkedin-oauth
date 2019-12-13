@@ -31,6 +31,11 @@ class NavBar extends Component {
             Login With Linkedin
           </Link>
         </div>
+        <div className='nav-link'>
+          <Link to='/user-info'>
+            User Info
+          </Link>
+        </div>
         <div className='nav-link' id='right'>
           <Input value={this.state.email} onChange={this.handleChange} placeholder='Find Someone via Email'></Input>
           <a target="_blank" rel="noopener noreferrer" href={`https://www.linkedin.com/sales/gmail/profile/viewByEmail/${this.state.email}`}>

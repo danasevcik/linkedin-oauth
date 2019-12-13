@@ -17,7 +17,7 @@ class Login extends Component {
     // debugger
     let authcode = window.location.href.slice(47, -10);
       if (authcode) {
-      fetch(`https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code=${authcode}&redirect_uri=http://localhost:3000/login-with-linkedin&client_id=77i0orwyc6pvp2&client_secret=WvZdgMEKMohjJUqK`)
+      fetch(`https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code=${authcode}&redirect_uri=http://localhost:3001/login-with-linkedin&client_id=77i0orwyc6pvp2&client_secret=WvZdgMEKMohjJUqK`)
         .then(res => res.json())
         .then(res => this.getProfile(res))
     }
@@ -63,7 +63,7 @@ class Login extends Component {
           :
             <div>
               <h1>Currently not sharing data with Dana's Test App</h1>
-              <a target='blank' href='https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77i0orwyc6pvp2&redirect_uri=http://localhost:3000/login-with-linkedin&state=xyz&scope=r_liteprofile,r_emailaddress'>
+              <a target='blank' href='https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77i0orwyc6pvp2&redirect_uri=http://localhost:3001/login-with-linkedin&state=xyz&scope=r_liteprofile,r_emailaddress'>
               <button className="ui linkedin button">
               <i aria-hidden="true" className="linkedin icon"></i>
                 LinkedIn
