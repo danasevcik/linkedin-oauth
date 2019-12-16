@@ -8,7 +8,7 @@ class DataTable extends Component {
     let confirmDelete = window.confirm('Delete item forever?')
     console.log(confirmDelete);
     if(confirmDelete){
-      fetch('http://localhost:3000/crud', {
+      fetch('http://localhost:3000/deleteUser', {
       method: 'delete',
       headers: {
         'Content-Type': 'application/json'
