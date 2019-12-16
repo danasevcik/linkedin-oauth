@@ -43,7 +43,9 @@ class DataTable extends Component {
               <ModalForm buttonLabel="Edit" item={item} updateState={this.props.updateState}/>
               {' '}
               <button color="danger" className='ui button' onClick={() => this.deleteItem(item.id)}>Delete</button>
-              <button color="danger" className='ui button' onClick={() => this.findOnLinkedIn(item.id)}>Find On LinkedIn</button>
+              <a target="_blank" rel="noopener noreferrer" href={`https://www.linkedin.com/sales/gmail/profile/viewByEmail/${item.email}`}>
+                <button color="danger" className='ui button'>Find On LinkedIn</button>
+              </a>
 
           </td>
         </tr>
