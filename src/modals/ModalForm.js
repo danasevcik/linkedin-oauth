@@ -28,7 +28,7 @@ class ModalForm extends Component {
                 className='ui button'
                 >{label}
               </Button>
-      title = 'Edit Item'
+      title = 'Edit'
     } else {
       button = <Button
                 color="success"
@@ -36,7 +36,7 @@ class ModalForm extends Component {
                 className='ui button'
                 >{label}
               </Button>
-      title = 'Add New Item'
+      title = 'Add User'
     }
 
 

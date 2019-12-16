@@ -5,7 +5,7 @@ import ModalForm from '../modals/ModalForm.js'
 class DataTable extends Component {
 
   deleteItem = id => {
-    let confirmDelete = window.confirm('Delete item forever?')
+    let confirmDelete = window.confirm('Delete user from database?')
     console.log(confirmDelete);
     if(confirmDelete){
       fetch('http://localhost:3000/deleteUser', {
@@ -23,10 +23,6 @@ class DataTable extends Component {
       })
       .catch(err => console.log(err))
     }
-
-  }
-
-  findOnLinkedIn = (id) => {
 
   }
 
