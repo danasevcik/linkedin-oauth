@@ -65,3 +65,8 @@ body, h1, h2, h3 {
   height: 50vh;
   width: 50vh;
 }
+
+#edit-form {
+  display: flex;
+  flex-direction: column;
+}

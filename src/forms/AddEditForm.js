@@ -74,18 +74,18 @@ class AddEditForm extends React.Component {
 
   render() {
     return (
-      <Form onSubmit={this.props.item ? this.submitFormEdit : this.submitFormAdd}>
-        <FormGroup>
-          <Label for="first">First Name</Label>
-          <Input type="text" name="first" id="first" onChange={this.onChange} value={this.state.first === null ? '' : this.state.first} />
+      <Form onSubmit={this.props.item ? this.submitFormEdit : this.submitFormAdd} id='edit-form'>
+        <FormGroup className='ui input'>
+          <Label for='first'>First Name</Label>
+          <input type='text' name='first' id='first' onChange={this.onChange} value={this.state.first === null ? '' : this.state.first} />
         </FormGroup>
-        <FormGroup>
-          <Label for="last">Last Name</Label>
-          <Input type="text" name="last" id="last" onChange={this.onChange} value={this.state.last === null ? '' : this.state.last}  />
+        <FormGroup className='ui input'>
+          <Label for='last'>Last Name</Label>
+          <input type='text' name='last' id='last' onChange={this.onChange} value={this.state.last === null ? '' : this.state.last}  />
         </FormGroup>
-        <FormGroup>
-          <Label for="email">Email</Label>
-          <Input type="email" name="email" id="email" onChange={this.onChange} value={this.state.email === null ? '' : this.state.email}  />
+        <FormGroup className='ui input'>
+          <Label for='email'>Email</Label>
+          <input type='email' name='email' id='email' onChange={this.onChange} value={this.state.email === null ? '' : this.state.email}  />
         </FormGroup>
 
         <button className='ui button'>Submit</button>
