@@ -77,6 +77,7 @@ class AddEditForm extends React.Component {
       <Form onSubmit={this.props.item ? this.submitFormEdit : this.submitFormAdd} id='edit-form'>
         <FormGroup className='ui input'>
           <Label for='first'>First Name</Label>
+          <p></p>
           <input type='text' name='first' id='first' onChange={this.onChange} value={this.state.first === null ? '' : this.state.first} />
         </FormGroup>
         <FormGroup className='ui input'>

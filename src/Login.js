@@ -63,6 +63,7 @@ class Login extends Component {
           :
             <div>
               <h1>Currently not sharing data with Dana's Test App</h1>
+              <h3>Login with LinkedIn below!</h3>
               <a target='blank' href='https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77i0orwyc6pvp2&redirect_uri=http://localhost:3001/login-with-linkedin&state=xyz&scope=r_liteprofile,r_emailaddress'>
               <button className="ui linkedin button">
               <i aria-hidden="true" className="linkedin icon"></i>
