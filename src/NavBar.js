@@ -5,14 +5,17 @@ import { Input } from 'semantic-ui-react'
 
 class NavBar extends Component {
 
+  // local state to handle email search
   state = {
     email: ''
   }
 
+  // set state on change to keep track of email
   handleChange = (e) => {
     this.setState({email: e.target.value});
   }
 
+  // render links to navbar and email input
   render() {
     return (
       <div id='nav-bar'>

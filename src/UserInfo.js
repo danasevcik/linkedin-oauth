@@ -50,6 +50,7 @@ class UserInfo extends Component {
      this.setState({ items: updatedItems })
    }
 
+   // render modalForm, CSVLink, and DataTable components
    render() {
      return (
        <Container className="App">
