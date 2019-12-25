@@ -5,6 +5,7 @@ class AddEditForm extends React.Component {
 
   // local state to keep track of updated user info
   state = {
+    id: 0,
     first: '',
     last: '',
     email: '',
@@ -56,6 +57,7 @@ class AddEditForm extends React.Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
+        id: this.state.id,
         first: this.state.first,
         last: this.state.last,
         email: this.state.email,

@@ -15,6 +15,9 @@ class UserInfo extends Component {
      this.getItems()
    }
 
+   // called from component did mount
+   // fetch to backend route to get all users
+   // set state with all items
    getItems(){
      fetch('http://localhost:3000/getAllUsers')
        .then(response => response.json())
