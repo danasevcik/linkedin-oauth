@@ -4,6 +4,10 @@ import ModalForm from '../modals/ModalForm.js'
 
 class DataTable extends Component {
 
+  // call this fcn when delete button is clicked
+  // confirm
+  // if confirmDelete is true, send fetch to backend
+  // call deleteItemFromState in userinfo
   deleteItem = id => {
     let confirmDelete = window.confirm('Delete user from database?')
     console.log(confirmDelete);
@@ -26,6 +30,9 @@ class DataTable extends Component {
 
   }
 
+  // rendered from userinfo / recieve props
+  // for each user, map and create a table row with associated info
+  // render delete and find on linkedin buttons
   render() {
 
     const items = this.props.items.map(item => {

@@ -38,6 +38,8 @@ class UserInfo extends Component {
      this.setState({ items: newArray })
    }
 
+   // called from DataTable deleteItem fcn
+   // filter out deleted item
    deleteItemFromState = (id) => {
      const updatedItems = this.state.items.filter(item => item.id !== id)
      this.setState({ items: updatedItems })
