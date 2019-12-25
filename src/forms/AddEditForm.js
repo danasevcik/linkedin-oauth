@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormGroup, Label, Input } from 'reactstrap';
+import { Form, FormGroup, Label } from 'reactstrap';
 
 class AddEditForm extends React.Component {
 

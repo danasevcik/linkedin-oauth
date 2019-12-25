@@ -13,8 +13,6 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    console.log('here');
-    // debugger
     let authcode = window.location.href.slice(47, -10);
       if (authcode) {
       fetch(`https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code=${authcode}&redirect_uri=http://localhost:3001/login-with-linkedin&client_id=77i0orwyc6pvp2&client_secret=WvZdgMEKMohjJUqK`)

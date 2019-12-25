@@ -6,7 +6,6 @@ import About from './About.js'
 import Login from './Login.js'
 import NavBar from './NavBar.js'
 import UserInfo from './UserInfo.js'
-import { CSVLink } from "react-csv"
 
 class App extends Component {
 

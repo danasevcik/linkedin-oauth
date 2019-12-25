@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Button } from 'reactstrap';
+import { Table } from 'reactstrap';
 import ModalForm from '../modals/ModalForm.js'
 
 class DataTable extends Component {
