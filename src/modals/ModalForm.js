@@ -4,16 +4,21 @@ import AddEditForm from '../forms/AddEditForm.js'
 
 class ModalForm extends Component {
 
+  // local state to check if modal is clicked
   state = {
     modal: false
   }
 
+  // fcn to toggle modal click in state
   toggle = () => {
     this.setState(prevState => ({
       modal: !prevState.modal
     }))
   }
 
+  // recieve props from data table and rendered from userinfo
+  // check edit/add user
+  // render add edit form based on local state
   render() {
     const closeBtn = <button className="close ui button" onClick={this.toggle}>&times;</button>
     const label = this.props.buttonLabel
