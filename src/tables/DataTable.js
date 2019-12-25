@@ -11,6 +11,7 @@ class DataTable extends Component {
   deleteItem = id => {
     let confirmDelete = window.confirm('Delete user from database?')
     console.log(confirmDelete);
+    // call fetch if confirmDelete is true
     if(confirmDelete){
       fetch('http://localhost:3000/deleteUser', {
       method: 'delete',

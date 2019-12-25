@@ -22,13 +22,18 @@ class UserInfo extends Component {
        .catch(err => console.log(err))
    }
 
+   // called from submitFormAdd fcn in AddEditForm component
    addItemToState = (item) => {
      this.setState(prevState => ({
        items: [...prevState.items, item]
      }))
    }
 
-   updateState = (item) => {
+   // called from submitFormEdit fcn in AddEditForm component
+   // find the index of wanted item
+   // add new item to array and copy over the rest of the items
+   // set state with updated info
+  updateState = (item) => {
      const itemIndex = this.state.items.findIndex(data => data.id === item.id)
      const newArray = [
        ...this.state.items.slice(0, itemIndex),

@@ -2,17 +2,23 @@ import React from 'react';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 
 class AddEditForm extends React.Component {
+
+  // local state to keep track of updated user info
   state = {
-    id: 0,
     first: '',
     last: '',
     email: '',
   }
 
+  // update state onchange
   onChange = e => {
     this.setState({[e.target.name]: e.target.value})
   }
 
+  // called on submit
+  // send fetch to backend to create a new user
+  // add response obj to state in UserInfo component
+  // call toggle in ModalForm component
   submitFormAdd = e => {
     e.preventDefault()
     fetch('http://localhost:3000/createNewUser', {
@@ -38,6 +44,10 @@ class AddEditForm extends React.Component {
       .catch(err => console.log(err))
   }
 
+  // called on submit (has item prop from mapping over items in state)
+  // fetch to backend to edit user
+  // call updateState in UserInfo component
+  // call toggle in ModalForm component
   submitFormEdit = e => {
     e.preventDefault()
     fetch('http://localhost:3000/editUser', {
@@ -46,7 +56,6 @@ class AddEditForm extends React.Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        id: this.state.id,
         first: this.state.first,
         last: this.state.last,
         email: this.state.email,
