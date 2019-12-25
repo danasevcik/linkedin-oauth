@@ -7,10 +7,12 @@ import { CSVLink } from "react-csv"
 
 class UserInfo extends Component {
 
+  // state to keep track of all users
   state = {
      items: []
    }
 
+   // call get items on mount
    componentDidMount(){
      this.getItems()
    }
