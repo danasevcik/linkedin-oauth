@@ -19,12 +19,13 @@ class Login extends Component {
   // this authcode is neeeded to fetch to linkedin oauth api
   componentDidMount() {
     let authcode = window.location.href.slice(47, -10);
-      if (authcode) {
+    if (authcode) {
       fetch(`https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code=${authcode}&redirect_uri=http://localhost:3001/login-with-linkedin&client_id=77i0orwyc6pvp2&client_secret=WvZdgMEKMohjJUqK`)
         .then(res => res.json())
         .then(res => this.getProfile(res))
     }
   }
+
 
   // fetch to linkedin oauth api using the response token from previous fetch (in component did mount)
   // set state with user info

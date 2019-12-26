@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 class Home extends Component {
+
+  // render text and welcome photo
   render() {
     return (
       <div>
