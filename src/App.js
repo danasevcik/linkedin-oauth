@@ -9,10 +9,6 @@ import UserInfo from './UserInfo.js'
 
 class App extends Component {
 
-  handleChange = (e) => {
-    this.setState({email: e.target.value})
-  }
-
   render() {
     return (
       <div className="App">
