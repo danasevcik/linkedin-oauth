@@ -10,6 +10,8 @@ class ModalForm extends Component {
   }
 
   // fcn to toggle modal click in state
+  // called in AddEditForm when a user edits or adds a user
+  // also called in modalForm when user clicks close button and open button
   toggle = () => {
     this.setState(prevState => ({
       modal: !prevState.modal
