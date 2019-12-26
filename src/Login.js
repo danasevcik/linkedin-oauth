@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Table } from 'reactstrap';
 
 class Login extends Component {
 
@@ -47,16 +48,34 @@ class Login extends Component {
   // otherwise, render a button to share info
   // on click, go to linkedin oauth page
   render() {
+    const items = (
+      <tr key={this.state.id}>
+        <td>{this.state.firstName}</td>
+        <td>{this.state.lastName}</td>
+        <td>{this.state.id}</td>
+        <td>{this.state.pic}</td>
+      </tr>
+      )
+
     return (
       <div>
         {this.state.firstName ?
-            <div>
-              <h1>You are now sharing the following info with Dana-test-app</h1>
-              <p>First Name: {this.state.firstName}</p>
-              <p>Last Name: {this.state.lastName}</p>
-              <p>LinkedIn ID: {this.state.id}</p>
-              <p>Photo Info: {this.state.pic}</p>
-            </div>
+          <div>
+          <h1>You are now sharing the following info with Dana-test-app</h1>
+            <Table style={{margin: 'auto'}}>
+              <thead>
+                <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>LinkedIn ID Number</th>
+                  <th>LinkedIn Photo Information</th>
+                </tr>
+              </thead>
+              <tbody style={{alignSelf: 'center'}}>
+                {items}
+              </tbody>
+            </Table>
+          </div>
           :
             <div>
               <h1>Currently not sharing data with Dana's Test App</h1>
