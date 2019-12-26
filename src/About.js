@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 class About extends Component {
+
+  // render text about this application
   render() {
     return (
       <div>

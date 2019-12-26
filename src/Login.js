@@ -3,6 +3,7 @@ import './App.css';
 
 class Login extends Component {
 
+  // local state to display what information is being shared with the test app
   state = {
     email: '',
     firstName: null,
@@ -12,6 +13,9 @@ class Login extends Component {
     accessToken: null
   }
 
+  // when compnent renders, check if there is an authcode in the url
+  // if there is, call get profile with the token
+  // this authcode is neeeded to fetch to linkedin oauth api
   componentDidMount() {
     let authcode = window.location.href.slice(47, -10);
       if (authcode) {
@@ -21,17 +25,9 @@ class Login extends Component {
     }
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    let code = this.state.code;
-    fetch(`https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code=${code}&redirect_uri=https://www.hunterz.io/about&client_id=77i0orwyc6pvp2&client_secret=WvZdgMEKMohjJUqK`)
-      .then(res => res.json())
-      .then(res => this.getProfile(res))
-    this.setState({code: ''})
-  }
-
+  // fetch to linkedin oauth api using the response token from previous fetch (in component did mount)
+  // set state with user info
   getProfile = (token) => {
-    console.log(token);
     fetch(`https://api.linkedin.com/v2/me?oauth2_access_token=${token.access_token}`)
     .then(res => res.json())
     .then(res => {
@@ -47,6 +43,9 @@ class Login extends Component {
     this.setState({accessToken: token.access_token})
   }
 
+  // if there is first name info in state, show the user's information
+  // otherwise, render a button to share info
+  // on click, go to linkedin oauth page
   render() {
     return (
       <div>
