@@ -18,6 +18,7 @@ class AddEditForm extends React.Component {
 
   // called on submit
   // send fetch to backend to create a new user
+  // check if response item is an array (w obj in it)
   // add response obj to state in UserInfo component
   // call toggle in ModalForm component
   submitFormAdd = e => {
