@@ -1,75 +1,28 @@
+# Test app frontend
 
-Login with LinkedIn - the screen should show the icon, when clicked it should show a small pop up requesting permission from current user to share his\her basic profile details, once approved, it should display profile lite details. Info on Profile lite can be found here - https://docs.microsoft.com/en-us/linkedin/shared/references/v2/profile/lite-profile
+This is a test app that authorizes LinkedIn to use user information
 
-Find linked in page using email - another alternative is to find LinkedIn profile page using email (not via the API), can you think of a way to do so and show that in the app?
+## Technology Used
+This project was built using a Node and Express backend. The Github repo for the backend can be found [here](https://github.com/danasevcik/node-backend). Additional technologies used include:
+* React
+* React Routes
+* Semantic
+* Bootstrap
+* LinkedIn OAuth API
+* Custom CSS
 
+## Features
+This application allows users to:
+* Access a Home and About page
+* Navigate through links on the navbar
+* Search LinkedIn for a user based on an email address
+* Grant LinkedIn access to user information
+* View other users on the application
+* Download CSV of all users
 
+## How to Use
+1. Visit the backend repo [here](https://github.com/danasevcik/node-backend) and follow instructions on the readme. The backend server should be started before the next steps are run.
+2. Clone this repository and run ```npm install```.
+3. Run using ```npm start```. Be sure to run on port 3001
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Enjoy!
