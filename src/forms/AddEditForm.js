@@ -84,6 +84,7 @@ class AddEditForm extends React.Component {
     }
   }
 
+  // render form to add/edit based on toggle state in modal form
   render() {
     return (
       <Form onSubmit={this.props.item ? this.submitFormEdit : this.submitFormAdd} id='edit-form'>
